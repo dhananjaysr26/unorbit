@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import "../index.css";
-
-import { BsPersonFill } from "react-icons/bs";
+import axios from "axios";
+import { Link } from "react-router-dom";
 function Home() {
+    const [users, setUsers] = useState([]);
+    useEffect(async () => {
+        await axios.get('https://panorbit.in/api/users.json')
+            .then(res => {
+                setUsers(res.data.users);
+            });
+    }, [])
     return (
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -13,19 +20,22 @@ function Home() {
                     <p>Select an Account</p>
                 </div>
                 <div className="container-main">
-                    <ul className="list-view">
-                        <li className="list "><BsPersonFill style={{ color: "blue", marginRight: "10px" }} />Dhananjay Singh</li>
-                        <li className="list "><BsPersonFill style={{ color: "blue", marginRight: "10px" }} />Shivam Singh</li>
+                    {
+                        users.map((userData) => {
+                            return (
+                                <ul className="list-view">
+                                    <Link to={{
+                                        pathname: '/dashboard',
+                                        state: { data: userData }
+                                    }} style={{ textDecoration: "none" }}><li className="list "
+                                    ><img src={userData.profilepicture} style={{ color: "blue", marginRight: "10px" }} />{userData.name}</li>
+                                    </Link>
+                                </ul>
 
-                        <li className="list "><BsPersonFill style={{ color: "blue", marginRight: "10px" }} />Rahul Singh</li>
+                            )
+                        })
+                    }
 
-                        <li className="list "><BsPersonFill style={{ color: "blue", marginRight: "10px" }} />Vicky jha</li>
-
-                        <li className="list "><BsPersonFill style={{ color: "blue", marginRight: "10px" }} />Jash Singh</li>
-
-                        <li className="list "><BsPersonFill style={{ color: "blue", marginRight: "10px" }} />Rohan Thube</li>
-
-                    </ul>
                 </div>
             </div>
         </div>

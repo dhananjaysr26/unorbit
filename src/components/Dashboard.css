@@ -1,3 +1,4 @@
+/* rgb(179, 161, 161) */
 .dashboard {
   display: grid;
   height: 100vh;
@@ -13,6 +14,22 @@
 .topbar {
   grid-area: topbar;
   position: relative;
+  border-bottom: 0.5px solid rgb(233, 218, 218);
+}
+.head-title {
+  font-size: 32px;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.right-head {
+  float: right;
+}
+.right-head p {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 .sidebar {
   grid-area: sidebar;
@@ -30,38 +47,49 @@
   height: 95vh;
   margin-top: 20px;
   margin-bottom: 20px;
-  background: rgb(152, 159, 160);
+  background: rgb(23, 98, 181);
+  background: linear-gradient(
+    14deg,
+    rgba(23, 98, 181, 1) 22%,
+    rgba(0, 241, 255, 1) 100%
+  );
   border-radius: 25px;
   position: absolute;
 }
+.sidebar-link {
+  margin-top: 35vh;
+  margin-left: 5vh;
+}
+.link {
+  font-size: 20px;
+  margin-top: 15px;
+  border-block-end: 0.1px solid rgb(218, 199, 199);
+  color: white;
+}
+.link:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
 /*  */
-.topbar-content {
-  position: absolute;
-  width: 100%;
-  margin-top: 10px;
-  border-bottom: 1px solid brown;
-  height: 10vh;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-.topbar-content h1 {
-  float: left;
-}
-.topbar-content h2 {
-  float: right;
-}
 .maind h3 {
   display: inline;
 }
 .company {
   width: 50%;
 }
-.company h1 {
-  text-align: center;
-}
 .text-view {
   margin-left: 100px;
   margin-bottom: 10px;
+}
+.text-view p {
+  color: rgb(87, 77, 77);
+  display: inline;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.text-view label {
+  font-size: 18px;
+  color: rgb(179, 161, 161);
 }
 .circular_image {
   margin-left: 125px;
@@ -70,24 +98,84 @@
   height: 200px;
   border-radius: 50%; /* Modified*/
   /*overflow:hidden;*/
-  background-color: blue;
+  background: url("../Assets/user.png");
+  background-size: 200px 200px;
+}
+.user-profile {
+  width: 200px;
+  height: 250px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.user-profile h3,
+small {
+  margin-left: 30px;
+}
+.user-pic {
+  border-radius: 50%;
+  width: 30px;
+  height: 35px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+.user-pic-medium {
+  border-radius: 50%;
+  width: 100px;
+  height: 105px;
+  margin-left: 50px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 .profile-info {
   width: 50%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(233, 218, 218);
 }
-.profile-info h1 {
+.profile-head {
   text-align: center;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  color: rgb(87, 77, 77);
+  font-size: 20px;
+}
+.address-head {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: rgb(87, 77, 77);
+  font-size: 20px;
 }
 .main-left {
-  border-right: 1px solid black;
+  border-right: 1px solid rgb(233, 218, 218);
 }
 .main-right h1 {
   text-align: center;
 }
 .map {
   margin: 10px;
+  margin-left: 20px;
   border-radius: 20px;
+}
+.sign-out-btn {
+  margin-left: 70px;
+  margin-top: 40px;
+  width: 70px;
+  height: 30px;
+  background: rgb(248, 112, 180);
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 0;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.sign-out-btn:hover {
+  cursor: pointer;
+  color: black;
 }

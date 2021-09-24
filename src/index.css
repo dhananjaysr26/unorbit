@@ -40,6 +40,9 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+.list-view {
+  text-decoration: none;
+}
 .list:hover {
   cursor: pointer;
   font-size: 17px;
