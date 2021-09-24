@@ -1,13 +1,52 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.container-head {
+  text-align: center;
+  color: rgb(253, 253, 253);
+  background: rgb(95, 94, 94);
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  border-radius: 10px;
+  height: 80px;
+  padding-top: 20px;
+}
+.container-main {
+  overflow: auto;
+  height: 25vh;
+}
+.list {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: aqua;
+  border-bottom: 0.5px solid gray;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.list:hover {
+  cursor: pointer;
+  font-size: 17px;
+  color: black;
+}
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 90%;
+  }
 }
